@@ -272,12 +272,12 @@ class ResNet(nn.Module):
     def __init__(self, block, layers, num_classes=10, group_norm=0):#block = basic_block or bottleneck_block,layers=a list containing the block number descriptions
         self.inplanes = 64
         super(ResNet, self).__init__()
-        #for imagenet and cifar
+        #for cifar
         #self.conv1 = nn.Conv2d(3, 64, kernel_size=7, stride=2, padding=3,
         #                       bias=False)
         self.conv1 = nn.Conv2d(3, 64, kernel_size=3, stride=1, padding=1,
                                bias=False)
-        #for mnist
+        #for mnist and Imagenet
         '''self.conv1 = nn.Conv2d(1, 64, kernel_size=7, stride=2, padding=3,
                                bias=False)'''
         #self.bn1 = norm2d(64, group_norm)
